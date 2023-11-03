@@ -1,0 +1,37 @@
+<div class="registration-wrap">
+    <form class="registration-form" [formGroup]="registrationFormGroup">
+        <h3>REGISTRATION FORM</h3>
+        <div class="form-group names">
+            <input type="text" placeholder="First Name" class="form-control first-name-input" formControlName="firstname">
+            <input type="text" placeholder="Last Name" class="form-control last-name-input" formControlName="lastname">
+        </div>
+        <div class="form-group username">
+            <input type="text" placeholder="Username" class="form-control username-input" formControlName="username">
+            <mat-icon>account_circle</mat-icon>
+        </div>
+        <div class="form-group email">
+            <input type="text" placeholder="Email Adress" class="form-control email-input" formControlName="email">
+            <mat-icon>email</mat-icon>
+        </div>
+        <div class="form-group gender">
+            <select class="form-control select-gender" formControlName="select">
+                <option>Gender</option>
+                <option value="male">Male</option>
+                <option value="femal">Female</option>
+                <option value="other">Other</option>
+                </select>
+        </div>
+        <div class="form-group password">
+            <input type="password" placeholder="Password" class="form-control password-input" formControlName="password">
+            <mat-icon>lock</mat-icon>
+        </div>
+        <div class="form-group confirm-password">
+            <input type="password" placeholder="Confirm Password" class="form-control confirm-password-input" formControlName="confirmpassword">
+            <mat-icon>lock</mat-icon>
+        </div>
+        <button class="register-button" (click)="registerHandler()">Register</button>
+    </form>
+    <div class="sign-in">
+        <p>Already have an account? <a routerLink="/loginPage">Sign In!</a></p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="login-page-wrap">
+  <div class="video-wrap">
+    <vg-player>
+      <video id="background-video" preload="auto" autoplay muted loop>
+        <source src="../assets/videos/space_bgvid.mp4" type="video/mp4" />
+      </video>
+    </vg-player>
+
+    <form class="loginform-wrap" [formGroup]="loginform" >
+
+        <h3>Login Here</h3>
+        <div class="username-wrap">
+          <label for="username"
+            >Username:
+            <input type="text" id="username" formControlName="usernameControl"/>
+            <small *ngIf="loginform.get('usernameControl')?.errors && loginform.get('usernameControl')?.touched">Kötelező mező!</small>
+          </label>
+        </div>
+        <div class="password-wrap">
+          <label for="password"
+            >Password:
+            <input type="password" id="password" formControlName="passwordControl"/>
+            <small *ngIf="loginform.get('passwordControl')?.errors && loginform.get('passwordControl')?.touched">Kötelező mező!</small>
+          </label>
+        </div>
+        <button id="sign-in-button" (click)="showValue()">Sign In</button>
+     
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    margin: 10px;
+    padding: 5px;
+}
+
+.registration-wrap {
+    width: 1000px;   
+    margin: 0 auto; 
+    
+
+}
+
+/* .registration-form {
+    border: 1px dashed blue;
+
+} */
