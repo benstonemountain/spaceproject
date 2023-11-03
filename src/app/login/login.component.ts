@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,16 +15,20 @@ export class LoginComponent {
 
   loginform = this.loginFormBuilder.group({
 
-    usernameControl: ['', [Validators.required]],
-    passwordControl: ['', [Validators.required]]
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]]
 
   });
 
-  constructor(private loginFormBuilder: FormBuilder) {}
+  constructor(private loginFormBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) {}
 
-  showValue() {
-    console.log(this.loginform.controls.usernameControl.errors)
-    console.log(this.loginform.controls.passwordControl.errors)
+  loginHandler() {
+    console.log(this.loginform.value);
+    const {email, password} = this.loginform.value;
+    this.httpClient.post<any>("http://localhost:3000/login",{email, password}).subscribe(response => {localStorage.setItem("accessToken", response.accessToken); this.router.navigateByUrl("dashboard")});
+    
   }
+
+
 
 }

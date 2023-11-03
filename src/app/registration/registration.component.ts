@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -24,11 +25,12 @@ export class RegistrationComponent {
   });
 
   constructor(private registrationFormBuilder: FormBuilder,
-    private httpClient: HttpClient) {}
+    private httpClient: HttpClient, private router: Router) {}
 
   registerHandler() {
     console.log(this.registrationFormGroup.value);
-    this.httpClient.post("http://localhost:3000/register", this.registrationFormGroup.value).subscribe(console.log);
+    const {email, password} = this.registrationFormGroup.value;
+    this.httpClient.post<any>("http://localhost:3000/register",{email, password}).subscribe(response => {localStorage.setItem("accessToken", response.accessToken); this.router.navigateByUrl("dashboard")});
     
   }
 

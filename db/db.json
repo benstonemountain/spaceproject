@@ -1,5 +1,14 @@
 {
-    "users": [
-
-    ]
+  "users": [
+    {
+      "email": "dfgh@ghj.hu",
+      "password": "$2a$10$At.4CoQVLnRAm4YJic9w7e8U/xoB3iG4i4GJYY61xIM/eqsB5nQtW",
+      "id": 1
+    },
+    {
+      "email": "test@test.hu",
+      "password": "$2a$10$aeDsZABnsTfzo3/r5StzwuTY.Ae5kiOASy/rkO/s0kWEw3Cw5l10G",
+      "id": 2
+    }
+  ]
 }

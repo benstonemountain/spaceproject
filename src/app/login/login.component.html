@@ -9,21 +9,21 @@
     <form class="loginform-wrap" [formGroup]="loginform" >
 
         <h3>Login Here</h3>
-        <div class="username-wrap">
-          <label for="username"
+        <div class="email-wrap">
+          <label for="email"
             >Username:
-            <input type="text" id="username" formControlName="usernameControl"/>
-            <small *ngIf="loginform.get('usernameControl')?.errors && loginform.get('usernameControl')?.touched">Kötelező mező!</small>
+            <input type="text" id="email" formControlName="email"/>
+            <small *ngIf="loginform.get('email')?.errors && loginform.get('email')?.touched">Kötelező mező!</small>
           </label>
         </div>
         <div class="password-wrap">
           <label for="password"
             >Password:
-            <input type="password" id="password" formControlName="passwordControl"/>
-            <small *ngIf="loginform.get('passwordControl')?.errors && loginform.get('passwordControl')?.touched">Kötelező mező!</small>
+            <input type="password" id="password" formControlName="password"/>
+            <small *ngIf="loginform.get('password')?.errors && loginform.get('password')?.touched">Kötelező mező!</small>
           </label>
         </div>
-        <button id="sign-in-button" (click)="showValue()">Sign In</button>
+        <button id="sign-in-button" (click)="loginHandler()">Sign In</button>
      
     </form>
   </div>
